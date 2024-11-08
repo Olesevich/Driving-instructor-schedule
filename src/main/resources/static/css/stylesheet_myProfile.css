@@ -1,0 +1,59 @@
+html,
+body {
+    height: 100%;
+}
+body {
+    font-size: 100%;
+    line-height: 1.5;
+    font-family: sans-serif;
+    background: #28283b;
+    color: #444;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+.calendar-wrapper {
+    width: 800px;
+    margin: 3em auto;
+    padding: 2em;
+    border: 1px solid #dcdcff;
+    border-radius: 5px;
+    background: #fff;
+}
+table {
+    clear: both;
+    width: 100%;
+    border: 1px solid #dcdcff;
+    border-radius: 3px;
+    border-collapse: collapse;
+    color: #444;
+}
+td {
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #dcdcff;
+    border-top: 1px solid #dcdcff;
+    width: 14.28571429%;
+}
+input{
+    text-align: center;
+    outline: none;
+    border: none;
+}
+.string-name{
+    text-align: center;
+    font-size: 2em;
+}
+.string{
+    text-align: center;
+    font-size: 1.5em;
+}
+button{
+    font-size: 15px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+}

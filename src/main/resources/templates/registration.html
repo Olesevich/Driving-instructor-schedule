@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<!--        <form action="/registration" method="post">-->
+<link rel="stylesheet" href="http://localhost:63342/Instructor_Log/static/css/stylesheet_registration.css"
+      type="text/css">
+<div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Войти</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"
+                                                                         class="tab">Зарегистрироваться</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <form action="/sing_in" method="post">
+                    <div class="group">
+                        <label for="login" class="label">Логин</label>
+                        <input id="login" name="login" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="password" class="label">Пароль</label>
+                        <input id="password" name="password" type="password" class="input" data-type="password">
+                    </div>
+                    <!--                        <div class="group">-->
+                    <!--                            <input id="check" type="checkbox" class="check" checked>-->
+                    <!--                            <label for="check"><span class="icon"></span> Keep me Signed in</label>//оставаться в системе-->
+                    <!--                        </div>-->
+                    <div class="group">
+                        <button type="submit" class="button">Войти</button>
+                    </div>
+                    <!--                        <div class="foot-lnk">-->
+                    <!--                            <a href="#forgot">Forgot Password?</a>//страница если кто то забыл пароль-->
+                    <!--                        </div>-->
+<!--                    <if logout>-->
+<!--                        <div class ="alert alert-info" role="Alert">Вы успешно вышли</div>-->
+<!--                    </if>-->
+<!--                    <if error>-->
+<!--                        <div class ="alert alert-danger" role="Alert">Вы успешно залогинились</div>-->
+<!--                    </if>-->
+                </form>
+            </div>
+            <form action="/registrat" method="post">
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="login" class="label">Логин</label>
+                        <input id="login_regist" name = "login" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="password_regist" class="label">Пароль</label>
+                        <input id="password_regist"  name="password" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="repeat_pass-regist" class="label">Повторить пароль</label>
+                        <input id="repeat_pass-regist" name="povt_password" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="mail_regist" class="label">Почта Email </label>
+                        <input id="mail_regist" name="email" type="text" class="input"><!--потом сделать email в type-->
+                    </div>
+                    <div class="group">
+                        <label for="name_regist" class="label">Имя </label>
+                        <input id="name_regist" name="name" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="familyname_regist" class="label">Фамилия </label>
+                        <input id="familyname_regist" name="familyname" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="surname_regist" class="label">Отчество </label>
+                        <input id="surname_regist" name="surname" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="number_group_regist" class="label">Номер группы </label>
+                        <input id="number_group_regist" name="number_group" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Зарегистрироваться">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="divDay">
+        <script src="http://localhost:63342/Instructor_Log/static/js/index_regist.js"></script>
+    </div>
+</div>
+<!--        </form>-->
+</body>
+</html>

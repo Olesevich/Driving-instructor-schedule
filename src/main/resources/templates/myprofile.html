@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <link rel="stylesheet" href="http://localhost:63342/Instructor_Log/static/css/stylesheet_myProfile.css">
+        <div class="calendar-wrapper">
+            <div class="string-name">Личная карточка</div>
+            <table>
+                <tr>
+                    <td>Фамилия</td>
+                    <td><input id="family_name"   type="input" value="-----" th:value="${family_name}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Имя</td>
+                    <td><input id="name"   type="input" value="-----" th:value="${name}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Отчество</td>
+                    <td><input id="surname"   type="input" value="-----" th:value="${surname}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Логин</td>
+                    <td><input id="login"   type="input" value="-----" th:value="${login}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Номер группы</td>
+                    <td><input id="number_group"   type="input" value="-----" th:value="${number_group}" readonly></td>
+                </tr>
+                <tr>
+                    <td>Почта</td>
+                    <td><input id="email"   type="input" value="-----" th:value="${email}" readonly></td>
+                </tr>
+            </table>
+            <div class="string">Занятия</div>
+            <table>
+            <tr>
+                <td>Номер занятия</td>
+                <td >Дата занятия</td>
+                <td>Номер занятия</td>
+                <td >Дата занятия</td>
+                <td>Номер занятия</td>
+                <td >Дата занятия</td>
+            </tr>
+            <tr>
+                <td>1.1-2.1</td>
+                <td ><input id="input_0" type="input" value="-----" readonly></td>
+                <td>3.1.1</td>
+                <td ><input id="input_5" type="input" value="-----" readonly></td>
+                <td>4.1.1</td>
+                <td ><input id="input_15" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td>2.2-2.3.1</td>
+                <td ><input id="input_1" type="input" value="-----" readonly></td>
+                <td>3.1.2</td>
+                <td ><input id="input_6" type="input" value="-----" readonly></td>
+                <td>4.1.2</td>
+                <td ><input id="input_16" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td>2.3.2</td>
+                <td><input id="input_2" type="input" value="-----" readonly></td>
+                <td>3.2.1</td>
+                <td><input id="input_7" type="input" value="-----" readonly></td>
+                <td>4.1.3</td>
+                <td><input id="input_17" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td>2.3.3</td>
+                <td><input id="input_3" type="input" value="-----" readonly></td>
+                <td>3.2.2</td>
+                <td><input id="input_8" type="input" value="-----" readonly></td>
+                <td>4.1.4</td>
+                <td><input id="input_18" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td>2.3.4 + Т.К.</td>
+                <td><input id="input_4" type="input" value="-----" readonly></td>
+                <td>3.2.3</td>
+                <td><input id="input_9" type="input" value="-----" readonly></td>
+                <td>4.1.5</td>
+                <td><input id="input_19" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>3.2.4</td>
+                <td><input id="input_10" type="input" value="-----" readonly></td>
+                <td>4.1.6</td>
+                <td><input id="input_20" type="input" value="-----" readonly></td>
+            </tr>
+             <tr>
+                 <td></td>
+                 <td></td>
+                <td>3.2.5</td>
+                <td><input id="input_11" type="input" value="-----" readonly></td>
+                 <td>4.1.7</td>
+                 <td><input id="input_21" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>3.2.6</td>
+                <td><input id="input_12" type="input" value="-----" readonly></td>
+                <td>4.2.1</td>
+                <td><input id="input_22" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>3.2.7</td>
+                <td><input id="input_13" type="input" value="-----" readonly></td>
+                <td>4.2.2</td>
+                <td><input id="input_23" type="input" value="-----" readonly></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>3.2.8 + Т.К.</td>
+                <td><input id="input_14" type="input" value="-----" readonly></td>
+                <td>Экзамен</td>
+                <td><input id="input_24" type="input" value="-----" readonly></td>
+            </tr>
+        </table>
+            <div id="divDay">
+                <script src="http://localhost:63342/Instructor_Log/static/js/index_myProfile.js"></script>
+            </div>
+            <button  onclick="document.location='../'" id="but" type="button">Назад к календарю</button>
+    </div>
+    </body>
+</html>
