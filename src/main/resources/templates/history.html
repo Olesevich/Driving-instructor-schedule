@@ -5,6 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+<link rel="stylesheet" href="http://localhost:63342/Instructor_Log/static/css/stylesheet_history.css">
+<div class="calendar-wrapper">
+    <div class="string-name">Список пользователей</div>
+    <table>
+        <tr>
+            <td>Фамилия</td>
+            <td><input id="family_name"   type="input" value="-----" th:value="${family_name}" readonly></td>
+        </tr>
+        <tr>
+            <td>Имя</td>
+            <td><input id="name"   type="input" value="-----" th:value="${name}" readonly></td>
+        </tr>
+        <tr>
+            <td>Отчество</td>
+            <td><input id="surname"   type="input" value="-----" th:value="${surname}" readonly></td>
+        </tr>
+        <tr>
+            <td>Логин</td>
+            <td><input id="login"   type="input" value="-----" th:value="${login}" readonly></td>
+        </tr>
+        <tr>
+            <td>Номер группы</td>
+            <td><input id="number_group"   type="input" value="-----" th:value="${number_group}" readonly></td>
+        </tr>
+        <tr>
+            <td>Почта</td>
+            <td><input id="email"   type="input" value="-----" th:value="${email}" readonly></td>
+        </tr>
+    </table>
+    <div id="divDay">
+        <script src="http://localhost:63342/Instructor_Log/static/js/index_history.js"></script>
+    </div>
+    <button  onclick="document.location='../'" id="but" type="button">Назад к календарю</button>
 
+</div>
 </body>
 </html>
