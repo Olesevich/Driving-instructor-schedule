@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -33,4 +36,6 @@ public class MyUsers {
     @Column(name = "role")
     private String role;
 
+    @OneToMany(mappedBy = "myUsers", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<MySchedules> mySchedules = new ArrayList<>();
 }

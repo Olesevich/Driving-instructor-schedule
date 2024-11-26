@@ -117,12 +117,6 @@ Cal.prototype.showMonth = function (y, m) {
                 '&year=' + this.currYear +'" >' + i + '</a>' + '</td>';
         }
 
-        // if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-        //     html += '<td class="today">' + '<a href="home/day" >' + i + '</a>' + '</td>';
-        // } else {
-        //     html += '<td class="normal">' + '<a href="home/day" >' + i + '</a>' + '</td>';
-        // }
-
         // закрыть строку в воскресенье
         if (dow == 0) {
             html += '</tr>';

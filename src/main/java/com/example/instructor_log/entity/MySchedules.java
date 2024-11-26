@@ -17,7 +17,7 @@ public class MySchedules {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
+    @ManyToOne/*(cascade = CascadeType.ALL)*/
     @JoinColumn(name = "myuser_id")
     private MyUsers myUsers;
 
@@ -29,5 +29,6 @@ public class MySchedules {
 
     @Column(name = "number_lesson")
     private String numberLesson;
+
 
 }

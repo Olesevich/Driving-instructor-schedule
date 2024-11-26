@@ -1,20 +1,35 @@
+function receiving_calendar_parameters(text) {
+    let param = (new URL(document.location)).searchParams;
+    return param.get(text)
+}
+
 function getId(id) {
     return document.getElementById(id);
 }
 
 async function load_date() {
-    let response = await fetch('http://localhost:8080/personal_classes',
-        {
-            method: 'POST'
-        }).then(res => res.json())
-        .then(res=>creatMassiv(res));
-
+    if (receiving_calendar_parameters('id') == null){
+        let resp = await fetch('http://localhost:8080/personal_clas',
+            {
+                method: 'POST',
+            }).then(res => res.json())
+            .then(res=>creatMassiv(res));
+    }
+    else {
+        const data = new FormData();
+        data.append("id", receiving_calendar_parameters('id'));//test in 1
+        let response = await fetch('http://localhost:8080/personal_classes',
+            {
+                method: 'POST',
+                body: data,
+            }).then(res => res.json())
+            .then(res => creatMassiv(res));
+    }
 }
 
 function creatMassiv(response) {
     var massiv_post_data = state_of_text(response);
     change_text_input(massiv_post_data);
-    console.log(massiv_post_data);
 }
 
 function state_of_text(response){

@@ -14,7 +14,7 @@ body {
 *:after {
     box-sizing: border-box;
 }
-.calendar-wrapper {
+.history {
     width: 800px;
     margin: 3em auto;
     padding: 2em;
@@ -38,7 +38,7 @@ td {
     border-top: 1px solid #dcdcff;
     width: 14.28571429%;
 }
-input{
+input, p{
     text-align: center;
     outline: none;
     border: none;
@@ -52,4 +52,7 @@ button{
     border-radius: 8px;
     margin: 0 auto;
     display: block;
+}
+p{
+font-size: 24px;
 }
