@@ -77,4 +77,10 @@ public class MyProfileService {
                 personal_data_email(user_profil(id)));
     }
 
+    public String return_role(){
+        MyUsers myUsers = userRepository.findByLogin(request.getUserPrincipal().getName())
+                .orElseThrow(RuntimeException::new);
+        return myUsers.getRole();
+    }
+
 }

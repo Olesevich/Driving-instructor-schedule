@@ -12,7 +12,7 @@ async function load_date() {
 }
 
 function creat_table(response) {
-    console.log(response);
+    // console.log(response);
     var html;
     html = '<table>';
     html += '<tr> ' +

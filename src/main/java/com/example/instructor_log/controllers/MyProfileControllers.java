@@ -44,4 +44,9 @@ public class MyProfileControllers {
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
+    @PostMapping("role")
+    public ResponseEntity<?> role(){
+        return new ResponseEntity<>(myProfileService.return_role(), HttpStatus.OK);
+    }
+
 }

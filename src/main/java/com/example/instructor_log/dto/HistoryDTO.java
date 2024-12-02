@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class HistoryDTO {
 
-    int id;    //test
+    int id;
     String login;
     String familyName;
     String name;

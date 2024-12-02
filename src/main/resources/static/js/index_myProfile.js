@@ -8,7 +8,13 @@ function getId(id) {
 }
 
 async function load_date() {
-    if (receiving_calendar_parameters('id') == null){
+    let respu = await fetch('http://localhost:8080/role',//для опроса админ или нет, если да то появит кнопк
+        {
+            method: 'POST',
+        }).then(respo => respo.text())
+        .then(respo=>button_history_admin(respo));
+
+    if (receiving_calendar_parameters('id') == null){//для захода на личнуб карточку
         let resp = await fetch('http://localhost:8080/personal_clas',
             {
                 method: 'POST',
@@ -17,14 +23,15 @@ async function load_date() {
     }
     else {
         const data = new FormData();
-        data.append("id", receiving_calendar_parameters('id'));//test in 1
-        let response = await fetch('http://localhost:8080/personal_classes',
+        data.append("id", receiving_calendar_parameters('id'));
+        let response = await fetch('http://localhost:8080/personal_classes',//для заход. на лич карту,то через историю
             {
                 method: 'POST',
                 body: data,
             }).then(res => res.json())
             .then(res => creatMassiv(res));
     }
+    // button_history_admin(1);
 }
 
 function creatMassiv(response) {
@@ -45,5 +52,16 @@ function change_text_input(massiv_post_data){
         getId('input_' + i).value = massiv_post_data[i];
     }
 }
+
+function button_history_admin(a){
+    if (a == "ROLE_ADMIN") {
+        var html;
+
+        html = '<button id="button_history" onclick="document.location.href=\'../home/history\'" id="but_myProfile"\n' +
+            'type="button_history">Список пользователей</button>';
+        document.getElementById('divDay').innerHTML = html;
+    }
+}
+
 
 load_date();

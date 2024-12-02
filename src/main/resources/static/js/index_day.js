@@ -31,54 +31,50 @@ function displaying_values_from_an_array(respone){
 }
 
 
-function but(but, but_text) {//красит и блокирует времена которые заняты в базе данных
+function but(but, but_text, full_name) {//красит и блокирует времена которые заняты в базе данных
     but_text.style.background = 'red';//меняет фон на инпуте
-    but_text.value = "Занято";//меняет текст в инпуте
+    but_text.value = full_name;//меняет текст в инпуте
     but.disabled = true;//делает кнопку не активной
 }
 
-function event_button(i) {
+function event_button(i, full_name) {
     switch (i){
         case '8':
-            but(getId('btn8_00'),getId('input8_00'));
+            but(getId('btn8_00'),getId('input8_00'), full_name);
             break;
         case '9':
-            but(getId('btn9_00'),getId('input9_00'));
+            but(getId('btn9_00'),getId('input9_00'), full_name);
             break;
         case '10':
-            but(getId('btn10_00'),getId('input10_00'));
+            but(getId('btn10_00'),getId('input10_00'), full_name);
             break;
         case '11':
-            but(getId('btn11_00'),getId('input11_00'));
+            but(getId('btn11_00'),getId('input11_00'), full_name);
             break;
         case '12':
-            but(getId('btn12_00'),getId('input12_00'));
+            but(getId('btn12_00'),getId('input12_00'), full_name);
             break;
         case '13':
-            but(getId('btn13_00'),getId('input13_00'));
+            but(getId('btn13_00'),getId('input13_00'), full_name);
             break;
         case '14':
-            but(getId('btn14_00'),getId('input14_00'));
+            but(getId('btn14_00'),getId('input14_00'), full_name);
             break;
         case '15':
-            but(getId('btn15_00'),getId('input15_00'));
+            but(getId('btn15_00'),getId('input15_00'), full_name);
             break;
         case '16':
-            but(getId('btn16_00'),getId('input16_00'));
+            but(getId('btn16_00'),getId('input16_00'), full_name);
             break;
     }
 }
 
-function state_of_buttons_and_lines(massiv_bd) {
-    for (let i = 0; i < massiv_bd.length; i++) {
-        if (i % 2 === 0 ){
-            event_button(massiv_bd[i]);
-        }
-        else {
-            //здесь будет код для человека который зашел под админом, и вместо занято написано кем занято, здесь получение с
-            //массива фамилии учащихся
-        }
-    }
+async function state_of_buttons_and_lines(massiv_bd) {
+    let respu = await fetch('http://localhost:8080/role',
+        {
+            method: 'POST',
+        }).then(respo => respo.text())
+        .then(respo => status_inpunt(respo, massiv_bd));
 }
 
 //функция которая после нажатия кнопки меняет цвет у текста, а так же делает не активную кнопку
@@ -114,6 +110,16 @@ function pushButton(massiv_bd){
     eventPushButton(getId('btn14_00'),getId('input14_00'),"14");
     eventPushButton(getId('btn15_00'),getId('input15_00'),"15");
     eventPushButton(getId('btn16_00'),getId('input16_00'),"16");
+}
+
+async function status_inpunt(respo,massiv_bd) {
+    for (let i = 0; i < massiv_bd.length; i++) {
+        if (i % 2 === 0 & respo != "ROLE_ADMIN") {
+            console.log("нельзя выполнять");
+        } else  {
+            event_button(massiv_bd[i],massiv_bd[i + 1]);
+        }
+    }
 }
 
 
